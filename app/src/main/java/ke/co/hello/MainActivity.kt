@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
       var userName = etUserName.text.toString()
       var password = etPassword.text.toString()
       Toast.makeText(baseContext, password, Toast.LENGTH_SHORT).show()
+      startActivity(Intent(baseContext, CoursesActivity::class.java))
     }
   }
 }
