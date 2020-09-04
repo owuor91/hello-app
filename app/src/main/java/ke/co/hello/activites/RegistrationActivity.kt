@@ -1,9 +1,13 @@
-package ke.co.hello
+package ke.co.hello.activites
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import ke.co.hello.R
+import ke.co.hello.api.ApiClient
+import ke.co.hello.api.ApiInterface
+import ke.co.hello.models.RegistrationResponse
 import kotlinx.android.synthetic.main.activity_registration.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

@@ -1,4 +1,4 @@
-package ke.co.hello
+package ke.co.hello.activites
 
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -6,13 +6,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import ke.co.hello.R
+import ke.co.hello.api.ApiClient
+import ke.co.hello.api.ApiInterface
 import ke.co.hello.database.HelloDatabase
+import ke.co.hello.models.Course
+import ke.co.hello.models.CoursesResponse
 import kotlinx.android.synthetic.main.activity_courses.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CoursesActivity : AppCompatActivity() {
+class CoursesActivity : AppCompatActivity(), CourseItemClickListener {
     lateinit var database: HelloDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,8 +67,14 @@ class CoursesActivity : AppCompatActivity() {
     }
 
     fun displayCourses(courses: List<Course>){
-        var coursesAdapter = CoursesAdapter(courses)
+        var coursesAdapter = CoursesAdapter(courses, this)
         rvCourses.layoutManager = LinearLayoutManager(baseContext)
         rvCourses.adapter = coursesAdapter
+    }
+
+    override fun onItemClick(course: Course) {
+        //obtain student id from shared preferences
+        //courseId = course.courseId
+        //make a post request https://github.com/owuor91/registration-api
     }
 }

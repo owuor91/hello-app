@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import ke.co.hello.Course
+import ke.co.hello.models.Course
 
 @Dao
 interface CourseDao {

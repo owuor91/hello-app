@@ -1,4 +1,4 @@
-package ke.co.hello
+package ke.co.hello.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
